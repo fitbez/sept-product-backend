@@ -5,7 +5,7 @@ const addProduct = async (req, res) => {
   try {
     const product = await Product.create(req.body);
     console.log("success");
-    res.status(201).send(product);
+    res.status(200).send(product);
   } catch (error) {
     console.log("failure");
     res.status(400).send(error);
@@ -16,7 +16,7 @@ const addProduct = async (req, res) => {
 const getProducts = async (req, res) => {
   try {
     const products = await Product.findAll();
-    res.json(products);
+    res.status(200).json(products);
   } catch (error) {
     res.status(500).send(error);
   }

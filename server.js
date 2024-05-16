@@ -13,7 +13,5 @@ app.use(bodyParser.json());
 app.use("/api/product", productRoutes);
 app.use("/api/auth", authRoutes);
 // Set up our express server
-const PORT = "5000";
-app.listen(process.env.PORT || PORT, () =>
-  console.log(`Server started on port ${PORT}`)
-);
+const PORT = process.env.PORT || "5000";
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
